@@ -15,12 +15,11 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background: #fff;
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover;
             color: white;
             text-align: center;
             padding: 120px 20px;
@@ -29,7 +28,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
 
         .hero h1 {
@@ -37,23 +35,40 @@
             font-weight: 700;
             letter-spacing: 4px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero h2 {
             font-size: 2rem;
             font-weight: 400;
             margin-bottom: 15px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .contact-header {
+            background: #1a5a1a;
             color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .contact-header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .contact-header a:hover {
+            text-decoration: underline;
         }
 
         .container {
@@ -70,7 +85,7 @@
             max-width: 900px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
-            z-index: 10;
+            z-index: 1;
         }
 
         h3 {
@@ -101,10 +116,6 @@
             gap: 10px;
             font-size: 1rem;
             color: #333;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .location-item::before {
@@ -114,7 +125,7 @@
 
         .btn {
             background: #1a5a1a;
-            color: white !important;
+            color: white;
             padding: 15px 35px;
             border: none;
             border-radius: 8px;
@@ -142,6 +153,57 @@
             transform: none;
         }
 
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-float::before {
+            content: '💬';
+            font-size: 32px;
+        }
+
+        .whatsapp-float::after {
+            content: 'Chat with us on WhatsApp';
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+        }
+
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
@@ -162,13 +224,11 @@
             padding: 18px;
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
-            color: #333;
         }
 
         .pricing-table th {
             font-weight: 600;
             font-size: 1.05rem;
-            color: white;
         }
 
         .pricing-table tbody tr:hover {
@@ -188,7 +248,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #333;
         }
 
         .note::before {
@@ -214,11 +273,10 @@
             align-items: center;
             gap: 12px;
             font-size: 1.05rem;
-            color: #333;
         }
 
         .feature-list li::before {
-            content: '✓';
+            content: '✔';
             background: #1a5a1a;
             color: white;
             width: 28px;
@@ -253,7 +311,6 @@
             align-items: flex-start;
             gap: 12px;
             font-size: 1.05rem;
-            color: #333;
         }
 
         .why-list li::before {
@@ -296,8 +353,6 @@
             font-size: 1rem;
             font-family: inherit;
             transition: border-color 0.3s;
-            background: white;
-            color: #333;
         }
 
         .form-group input:focus,
@@ -332,12 +387,6 @@
             animation: slideIn 0.5s ease;
         }
 
-        .success-message h3 {
-            color: #155724;
-            border: none;
-            margin-bottom: 10px;
-        }
-
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -366,7 +415,6 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
-                letter-spacing: 2px;
             }
 
             .hero h2 {
@@ -395,13 +443,30 @@
                 padding: 25px 20px;
             }
 
-            .location-grid {
-                grid-template-columns: 1fr;
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 26px;
+            }
+
+            .whatsapp-float::after {
+                display: none;
+            }
+
+            .contact-header {
+                font-size: 0.95rem;
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="contact-header">
+        📞 Call Us: <a href="tel:+917900061753">+91 7900061753</a>
+    </div>
+
     <section class="hero">
         <h1>GLIZMORE ROYALE</h1>
         <h2>Your Dream Plot Awaits in Mhasia</h2>
@@ -463,7 +528,7 @@
                     <li>0% Interest</li>
                     <li>Flexible Duration Options</li>
                 </ul>
-                <p style="margin: 20px 0; color: #333;">Easy documentation and transparent process</p>
+                <p style="margin: 20px 0;">Easy documentation and transparent process</p>
                 <button class="btn" onclick="scrollToContact()">Get Payment Plan Details</button>
             </div>
 
@@ -478,7 +543,6 @@
             </div>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact-section" id="contact-form">
             <h3>Get in Touch</h3>
             <p style="text-align: center; margin-bottom: 30px; color: #666;">
@@ -528,6 +592,11 @@
         </div>
     </div>
 
+    <a href="https://wa.me/917900061753?text=Hi%2C%20I'm%20interested%20in%20Glizmore%20Royale%20plots" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp"></a>
+
     <script>
         function scrollToContact() {
             document.getElementById('contact-form').scrollIntoView({ 
@@ -541,7 +610,7 @@
             window.open(mapsUrl, '_blank');
         }
 
-        // Form submission handler - Connected to Google Form
+        // BACKEND VERSION - Form submission to Node.js server
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -556,34 +625,41 @@
             successMsg.classList.remove('show');
             
             const formData = new FormData(form);
-            const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdKgitiG8r5i2aG2UvruxhJW1DZo-pfba5qkXPK3UUXPsjhGQ/formResponse';
             
-            const googleFormData = new FormData();
-            googleFormData.append('entry.1171073377', formData.get('name'));
-            googleFormData.append('entry.175247169', formData.get('email'));
-            googleFormData.append('entry.559907591', formData.get('phone'));
-            googleFormData.append('entry.159712868', formData.get('plotType'));
-            
-            const messageValue = formData.get('message');
-            if (messageValue && messageValue.trim() !== '') {
-                googleFormData.append('entry.2137434508', messageValue);
-            }
-            
-            fetch(googleFormURL, {
+            // Send to backend API
+            fetch('/api/submit-inquiry', {
                 method: 'POST',
-                body: googleFormData,
-                mode: 'no-cors'
-            }).then(() => {
-                successMsg.classList.add('show');
-                form.reset();
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    plotType: formData.get('plotType'),
+                    message: formData.get('message') || ''
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    successMsg.classList.add('show');
+                    form.reset();
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    setTimeout(() => {
+                        successMsg.classList.remove('show');
+                    }, 10000);
+                } else {
+                    errorMsg.textContent = data.message || 'Something went wrong. Please try again.';
+                    errorMsg.classList.add('show');
+                }
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Inquiry';
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                setTimeout(() => {
-                    successMsg.classList.remove('show');
-                }, 10000);
-            }).catch((error) => {
-                errorMsg.textContent = 'Something went wrong. Please try again or contact us directly.';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                errorMsg.textContent = 'Something went wrong. Please try again or contact us directly at +91 7900061753';
                 errorMsg.classList.add('show');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Inquiry';
