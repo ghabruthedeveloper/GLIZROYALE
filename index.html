@@ -51,26 +51,6 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
-        .contact-header {
-            background: #1a5a1a;
-            color: white;
-            padding: 12px 20px;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .contact-header a {
-            color: white;
-            text-decoration: none;
-            margin-left: 10px;
-            font-weight: 600;
-        }
-
-        .contact-header a:hover {
-            text-decoration: underline;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -101,6 +81,93 @@
             color: #333;
             margin-bottom: 40px;
             line-height: 1.8;
+        }
+
+        /* Contact Icons Section */
+        .contact-icons-section {
+            background: linear-gradient(135deg, #1a5a1a 0%, #2d7a2d 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .contact-icons-title {
+            text-align: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .contact-icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-icon-card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+
+        .contact-icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .contact-icon-card.phone-card:hover {
+            background: #e3f2fd;
+        }
+
+        .contact-icon-card.whatsapp-card:hover {
+            background: #e8f5e9;
+        }
+
+        .contact-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .phone-card .contact-icon-wrapper {
+            background: #2196F3;
+        }
+
+        .whatsapp-card .contact-icon-wrapper {
+            background: #25d366;
+        }
+
+        .contact-icon-card:hover .contact-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .contact-icon-label {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .contact-icon-number {
+            font-size: 1.3rem;
+            color: #1a3a1a;
+            font-weight: 700;
         }
 
         .location-grid {
@@ -153,6 +220,39 @@
             transform: none;
         }
 
+        /* Floating Contact Buttons */
+        .phone-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 110px;
+            right: 30px;
+            background-color: #2196F3;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .phone-float:hover {
+            background-color: #1976D2;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .phone-float::before {
+            content: '📞';
+            font-size: 32px;
+        }
+
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -183,25 +283,6 @@
         .whatsapp-float::before {
             content: '💬';
             font-size: 32px;
-        }
-
-        .whatsapp-float::after {
-            content: 'Chat with us on WhatsApp';
-            position: absolute;
-            right: 70px;
-            background: #333;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            white-space: nowrap;
-            font-size: 14px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .whatsapp-float:hover::after {
-            opacity: 1;
         }
 
         .pricing-table {
@@ -430,6 +511,25 @@
                 font-size: 1.5rem;
             }
 
+            .contact-icons-container {
+                gap: 20px;
+            }
+
+            .contact-icon-card {
+                min-width: 150px;
+                padding: 25px 30px;
+            }
+
+            .contact-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+
+            .contact-icon-number {
+                font-size: 1.1rem;
+            }
+
             .pricing-table {
                 font-size: 0.9rem;
             }
@@ -443,6 +543,14 @@
                 padding: 25px 20px;
             }
 
+            .phone-float {
+                width: 50px;
+                height: 50px;
+                bottom: 90px;
+                right: 20px;
+                font-size: 26px;
+            }
+
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -450,23 +558,10 @@
                 right: 20px;
                 font-size: 26px;
             }
-
-            .whatsapp-float::after {
-                display: none;
-            }
-
-            .contact-header {
-                font-size: 0.95rem;
-                padding: 10px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="contact-header">
-        📞 Call Us: <a href="tel:+917900061753">+91 7900061753</a>
-    </div>
-
     <section class="hero">
         <h1>GLIZMORE ROYALE</h1>
         <h2>Your Dream Plot Awaits in Mhasia</h2>
@@ -543,6 +638,7 @@
             </div>
         </div>
 
+        <!-- Contact Form -->
         <div class="contact-section" id="contact-form">
             <h3>Get in Touch</h3>
             <p style="text-align: center; margin-bottom: 30px; color: #666;">
@@ -592,7 +688,13 @@
         </div>
     </div>
 
-    <a href="https://wa.me/917900061753?text=Hi%2C%20I'm%20interested%20in%20Glizmore%20Royale%20plots" 
+    <!-- Floating Phone Button -->
+    <a href="tel:+919820097869" 
+       class="phone-float" 
+       aria-label="Call Us"></a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919820097869?text=Hi%2C%20I'm%20interested%20in%20Glizmore%20Royale%20plots" 
        class="whatsapp-float" 
        target="_blank"
        aria-label="Chat on WhatsApp"></a>
@@ -610,7 +712,7 @@
             window.open(mapsUrl, '_blank');
         }
 
-        // BACKEND VERSION - Form submission to Node.js server
+        // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -626,40 +728,36 @@
             
             const formData = new FormData(form);
             
-            // Send to backend API
-            fetch('/api/submit-inquiry', {
+            const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdKgitiG8r5i2aG2UvruxhJW1DZo-pfba5qkXPK3UUXPsjhGQ/formResponse';
+            
+            const googleFormData = new FormData();
+            googleFormData.append('entry.1171073377', formData.get('name'));
+            googleFormData.append('entry.175247169', formData.get('email'));
+            googleFormData.append('entry.559907591', formData.get('phone'));
+            googleFormData.append('entry.159712868', formData.get('plotType'));
+            
+            const messageValue = formData.get('message');
+            if (messageValue && messageValue.trim() !== '') {
+                googleFormData.append('entry.2137434508', messageValue);
+            }
+            
+            fetch(googleFormURL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    plotType: formData.get('plotType'),
-                    message: formData.get('message') || ''
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    successMsg.classList.add('show');
-                    form.reset();
-                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    setTimeout(() => {
-                        successMsg.classList.remove('show');
-                    }, 10000);
-                } else {
-                    errorMsg.textContent = data.message || 'Something went wrong. Please try again.';
-                    errorMsg.classList.add('show');
-                }
+                body: googleFormData,
+                mode: 'no-cors'
+            }).then(() => {
+                successMsg.classList.add('show');
+                form.reset();
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Inquiry';
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                errorMsg.textContent = 'Something went wrong. Please try again or contact us directly at +91 7900061753';
+                
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 10000);
+            }).catch((error) => {
+                errorMsg.textContent = 'Something went wrong. Please try again or contact us directly.';
                 errorMsg.classList.add('show');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Inquiry';
