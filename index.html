@@ -750,8 +750,8 @@
             errorMsg.classList.remove('show');
             successMsg.classList.remove('show');
             
-            // REPLACE THESE WITH YOUR EMAILJS IDS
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+            // EmailJS Integration - Configured
+            emailjs.sendForm('service_w4bqc8m', 'template_wj75ysn', form)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     successMsg.classList.add('show');
