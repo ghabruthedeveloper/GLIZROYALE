@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glizmore Royale - Your Dream Plot Awaits in Mhasia</title>
     <meta name="description" content="Premium integrated township in Mhasia, Raigad. Residential & Farmhouse plots with flexible payment plans. 27km from Mangaon Station.">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("BNmtptF0arsyEffe8");
+        })();
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -51,12 +60,6 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
         .content-box {
             background: #f8f8f8;
             border-radius: 15px;
@@ -81,93 +84,6 @@
             color: #333;
             margin-bottom: 40px;
             line-height: 1.8;
-        }
-
-        /* Contact Icons Section */
-        .contact-icons-section {
-            background: linear-gradient(135deg, #1a5a1a 0%, #2d7a2d 100%);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .contact-icons-title {
-            text-align: center;
-            color: white;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .contact-icons-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-icon-card {
-            background: white;
-            padding: 30px 40px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            min-width: 200px;
-        }
-
-        .contact-icon-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .contact-icon-card.phone-card:hover {
-            background: #e3f2fd;
-        }
-
-        .contact-icon-card.whatsapp-card:hover {
-            background: #e8f5e9;
-        }
-
-        .contact-icon-wrapper {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            transition: all 0.3s ease;
-        }
-
-        .phone-card .contact-icon-wrapper {
-            background: #2196F3;
-        }
-
-        .whatsapp-card .contact-icon-wrapper {
-            background: #25d366;
-        }
-
-        .contact-icon-card:hover .contact-icon-wrapper {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .contact-icon-label {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .contact-icon-number {
-            font-size: 1.3rem;
-            color: #1a3a1a;
-            font-weight: 700;
         }
 
         .location-grid {
@@ -210,17 +126,12 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .btn:active {
-            transform: translateY(0);
-        }
-
         .btn:disabled {
             background: #999;
             cursor: not-allowed;
             transform: none;
         }
 
-        /* Floating Contact Buttons */
         .phone-float {
             position: fixed;
             width: 60px;
@@ -231,13 +142,11 @@
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
         }
@@ -245,7 +154,6 @@
         .phone-float:hover {
             background-color: #1976D2;
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         .phone-float::before {
@@ -263,13 +171,11 @@
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
         }
@@ -277,7 +183,6 @@
         .whatsapp-float:hover {
             background-color: #20ba5a;
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         .whatsapp-float::before {
@@ -307,17 +212,8 @@
             border-bottom: 1px solid #e0e0e0;
         }
 
-        .pricing-table th {
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
         .pricing-table tbody tr:hover {
             background: #f5f5f5;
-        }
-
-        .pricing-table tbody tr:last-child td {
-            border-bottom: none;
         }
 
         .note {
@@ -375,10 +271,6 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .why-choose h3 {
-            border-color: #1a5a1a;
         }
 
         .why-list {
@@ -493,7 +385,6 @@
             display: block;
         }
 
-        /* Payment Plan Modal */
         .modal {
             display: none;
             position: fixed;
@@ -503,18 +394,12 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.8);
-            animation: fadeIn 0.3s ease;
         }
 
         .modal.show {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .modal-content {
@@ -526,18 +411,6 @@
             overflow-y: auto;
             position: relative;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .modal-close {
@@ -548,7 +421,6 @@
             font-weight: bold;
             color: #666;
             cursor: pointer;
-            line-height: 1;
             transition: color 0.3s;
         }
 
@@ -556,14 +428,11 @@
             color: #d32f2f;
         }
 
-        .rate-chart-container {
-            text-align: center;
-        }
-
         .rate-chart-container h2 {
             color: #1a5a1a;
             margin-bottom: 20px;
             font-size: 2rem;
+            text-align: center;
         }
 
         .rate-section {
@@ -571,13 +440,6 @@
             padding: 20px;
             background: #f8f8f8;
             border-radius: 10px;
-        }
-
-        .rate-section h3 {
-            color: #1a5a1a;
-            border-bottom: 2px solid #1a5a1a;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
         }
 
         .rate-table {
@@ -601,10 +463,6 @@
             border-bottom: 1px solid #e0e0e0;
         }
 
-        .rate-table tbody tr:hover {
-            background: #f5f5f5;
-        }
-
         .rate-table .sold-out {
             color: #d32f2f;
             font-weight: bold;
@@ -617,12 +475,6 @@
             margin: 20px 0;
             border-radius: 5px;
             text-align: left;
-        }
-
-        .rate-note strong {
-            display: block;
-            margin-bottom: 10px;
-            color: #1a3a1a;
         }
 
         .company-info {
@@ -639,70 +491,13 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-
-            .content-box {
-                padding: 30px 20px;
-                margin: -50px 20px 0;
-            }
-
-            h3 {
-                font-size: 1.5rem;
-            }
-
-            .contact-icons-container {
-                gap: 20px;
-            }
-
-            .contact-icon-card {
-                min-width: 150px;
-                padding: 25px 30px;
-            }
-
-            .contact-icon-wrapper {
-                width: 60px;
-                height: 60px;
-                font-size: 30px;
-            }
-
-            .contact-icon-number {
-                font-size: 1.1rem;
-            }
-
-            .pricing-table {
-                font-size: 0.9rem;
-            }
-
-            .pricing-table th,
-            .pricing-table td {
-                padding: 12px 8px;
-            }
-
-            .contact-section {
-                padding: 25px 20px;
-            }
-
-            .phone-float {
-                width: 50px;
-                height: 50px;
-                bottom: 90px;
-                right: 20px;
-                font-size: 26px;
-            }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 26px;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .content-box { padding: 30px 20px; margin: -50px 20px 0; }
+            h3 { font-size: 1.5rem; }
+            .phone-float, .whatsapp-float { width: 50px; height: 50px; right: 20px; }
+            .phone-float { bottom: 90px; }
+            .whatsapp-float { bottom: 20px; }
         }
     </style>
 </head>
@@ -783,7 +578,6 @@
             </div>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact-section" id="contact-form">
             <h3>Get in Touch</h3>
             <p style="text-align: center; margin-bottom: 30px; color: #666;">
@@ -798,14 +592,16 @@
             <div class="error-message" id="errorMessage"></div>
 
             <form class="custom-form" id="contactForm">
+                <input type="hidden" name="current_date" id="currentDate">
+                
                 <div class="form-group">
                     <label for="name">Full Name <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="from_name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="from_email" required>
                 </div>
 
                 <div class="form-group">
@@ -815,7 +611,7 @@
 
                 <div class="form-group">
                     <label for="plotType">Interested In <span class="required">*</span></label>
-                    <select id="plotType" name="plotType" required>
+                    <select id="plotType" name="plot_type" required>
                         <option value="">Select Plot Type</option>
                         <option value="Residential Plots">Residential Plot</option>
                         <option value="Farmhouse Plots">Farmhouse Plot</option>
@@ -833,136 +629,61 @@
         </div>
     </div>
 
-    <!-- Floating Phone Button -->
-    <a href="tel:+917900061753" 
-       class="phone-float" 
-       aria-label="Call Us"></a>
+    <a href="tel:+917900061753" class="phone-float" aria-label="Call Us"></a>
+    <a href="https://wa.me/917900061753?text=Hi%2C%20I'm%20interested%20in%20Glizmore%20Royale%20plots" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/917900061753?text=Hi%2C%20I'm%20interested%20in%20Glizmore%20Royale%20plots" 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Chat on WhatsApp"></a>
-
-    <!-- Rate Chart Modal -->
     <div id="rateChartModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeRateChart()">&times;</span>
             <div class="rate-chart-container">
                 <h2>📋 Rate Chart - Glizmore Royale</h2>
                 
-                <!-- N.A Residential Plots -->
                 <div class="rate-section">
                     <h3>N.A Residential Plots</h3>
                     <table class="rate-table">
                         <thead>
-                            <tr>
-                                <th>Plot Size</th>
-                                <th>Rate (₹/sq.ft)</th>
-                                <th>Payment Plan</th>
-                                <th>Total Plot Price</th>
-                            </tr>
+                            <tr><th>Plot Size</th><th>Rate (₹/sq.ft)</th><th>Payment Plan</th><th>Total Plot Price</th></tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1650 Sq.Ft</td>
-                                <td class="sold-out">SOLD OUT</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹6,60,000</td>
-                            </tr>
-                            <tr>
-                                <td>2500 Sq.Ft</td>
-                                <td>₹400</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹10,00,000</td>
-                            </tr>
-                            <tr>
-                                <td>5000 Sq.Ft</td>
-                                <td>₹400</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹20,00,000</td>
-                            </tr>
+                            <tr><td>1650 Sq.Ft</td><td class="sold-out">SOLD OUT</td><td>50% BA/REST EMI'S</td><td>₹6,60,000</td></tr>
+                            <tr><td>2500 Sq.Ft</td><td>₹400</td><td>50% BA/REST EMI'S</td><td>₹10,00,000</td></tr>
+                            <tr><td>5000 Sq.Ft</td><td>₹400</td><td>50% BA/REST EMI'S</td><td>₹20,00,000</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Commercial Plots -->
                 <div class="rate-section">
                     <h3>Commercial Plots</h3>
                     <table class="rate-table">
                         <thead>
-                            <tr>
-                                <th>Plot Size</th>
-                                <th>Rate (₹/sq.ft)</th>
-                                <th>Payment Plan</th>
-                                <th>Total Plot Price</th>
-                            </tr>
+                            <tr><th>Plot Size</th><th>Rate (₹/sq.ft)</th><th>Payment Plan</th><th>Total Plot Price</th></tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1650 Sq.Ft <br><small>(16 Units)</small></td>
-                                <td>₹600</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹9,90,000</td>
-                            </tr>
-                            <tr>
-                                <td>2500 Sq.Ft <br><small>(32 Units)</small></td>
-                                <td>₹600</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹15,00,000</td>
-                            </tr>
-                            <tr>
-                                <td>5000 Sq.Ft <br><small>(30 Units)</small></td>
-                                <td>₹600</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹30,00,000</td>
-                            </tr>
+                            <tr><td>1650 Sq.Ft<br><small>(16 Units)</small></td><td>₹600</td><td>50% BA/REST EMI'S</td><td>₹9,90,000</td></tr>
+                            <tr><td>2500 Sq.Ft<br><small>(32 Units)</small></td><td>₹600</td><td>50% BA/REST EMI'S</td><td>₹15,00,000</td></tr>
+                            <tr><td>5000 Sq.Ft<br><small>(30 Units)</small></td><td>₹600</td><td>50% BA/REST EMI'S</td><td>₹30,00,000</td></tr>
                         </tbody>
                     </table>
-                    <p style="text-align: center; color: #1a5a1a; font-weight: 600; margin-top: 15px;">
-                        📌 Available Commercial Plots: 78 Units (As Per Sizes Mentioned Above)
-                    </p>
+                    <p style="text-align:center;color:#1a5a1a;font-weight:600;margin-top:15px;">📌 Available Commercial Plots: 78 Units</p>
                 </div>
 
-                <!-- Farmhouse Plots -->
                 <div class="rate-section">
                     <h3>Farmhouse Plots</h3>
                     <table class="rate-table">
                         <thead>
-                            <tr>
-                                <th>Plot Size</th>
-                                <th>Rate (₹/sq.ft)</th>
-                                <th>Payment Plan</th>
-                                <th>Total Plot Price</th>
-                            </tr>
+                            <tr><th>Plot Size</th><th>Rate (₹/sq.ft)</th><th>Payment Plan</th><th>Total Plot Price</th></tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>10,000 Sq.Ft <br><small>(SH.S)</small></td>
-                                <td>₹200</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹20,00,000</td>
-                            </tr>
-                            <tr>
-                                <td>20,000 Sq.Ft <br><small>(SP.S)</small></td>
-                                <td>₹200</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹40,00,000</td>
-                            </tr>
-                            <tr>
-                                <td>40,000 Sq.Ft <br><small>(SP.S)</small></td>
-                                <td>₹200</td>
-                                <td>50% BA/REST EMI'S</td>
-                                <td>₹80,00,000</td>
-                            </tr>
+                            <tr><td>10,000 Sq.Ft<br><small>(SH.S)</small></td><td>₹200</td><td>50% BA/REST EMI'S</td><td>₹20,00,000</td></tr>
+                            <tr><td>20,000 Sq.Ft<br><small>(SP.S)</small></td><td>₹200</td><td>50% BA/REST EMI'S</td><td>₹40,00,000</td></tr>
+                            <tr><td>40,000 Sq.Ft<br><small>(SP.S)</small></td><td>₹200</td><td>50% BA/REST EMI'S</td><td>₹80,00,000</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Preferred Location Charges -->
                 <div class="rate-note">
                     <strong>🏆 Preferred Location Charges:</strong>
-                    <ul style="margin-left: 20px; line-height: 1.8;">
+                    <ul style="margin-left:20px;line-height:1.8;">
                         <li><strong>60 Ft Road:</strong> 15% of BSP</li>
                         <li><strong>20 Ft Road:</strong> 10% of BSP</li>
                         <li><strong>Resort Facing:</strong> 15% of BSP</li>
@@ -970,75 +691,54 @@
                     </ul>
                 </div>
 
-                <!-- Company Info -->
                 <div class="company-info">
                     <h4>GLIZMORE INFRATECH LIMITED</h4>
                     <p><strong>Corporate Office:</strong></p>
-                    <p>B-102, Crystal Paradise, D.S Road, Veera Desai Road,<br>
-                    Andheri (West), Mumbai – 400053</p>
-                    <p style="margin-top: 15px;">
-                        <a href="tel:+917900061753" style="color: #1a5a1a; text-decoration: none; font-weight: 600;">
-                            📞 Call: +91 7900061753
-                        </a>
-                    </p>
+                    <p>B-102, Crystal Paradise, D.S Road, Veera Desai Road,<br>Andheri (West), Mumbai – 400053</p>
+                    <p style="margin-top:15px;"><a href="tel:+917900061753" style="color:#1a5a1a;text-decoration:none;font-weight:600;">📞 Call: +91 7900061753</a></p>
                 </div>
 
-                <button class="btn" onclick="scrollToContact()" style="margin-top: 20px;">
-                    Contact Us for More Details
-                </button>
+                <button class="btn" onclick="scrollToContact()" style="margin-top:20px;">Contact Us for More Details</button>
             </div>
         </div>
     </div>
 
     <script>
         function scrollToContact() {
-            // Close modal if open
             const modal = document.getElementById('rateChartModal');
-            if (modal) {
-                modal.classList.remove('show');
-            }
-            
-            document.getElementById('contact-form').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
+            if (modal) modal.classList.remove('show');
+            document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         
         function openMap() {
-            const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Mhasla+Raigad+Maharashtra';
-            window.open(mapsUrl, '_blank');
+            window.open('https://www.google.com/maps/search/?api=1&query=Mhasla+Raigad+Maharashtra', '_blank');
         }
 
         function showRateChart() {
-            const modal = document.getElementById('rateChartModal');
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.getElementById('rateChartModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeRateChart() {
-            const modal = document.getElementById('rateChartModal');
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('rateChartModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('rateChartModal');
-            if (event.target == modal) {
-                closeRateChart();
-            }
+            if (event.target == modal) closeRateChart();
         }
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeRateChart();
-            }
+            if (event.key === 'Escape') closeRateChart();
         });
 
-        // Form submission handler
+        // EmailJS Form Handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const now = new Date();
+            document.getElementById('currentDate').value = now.toLocaleString();
             
             const submitBtn = document.getElementById('submitBtn');
             const successMsg = document.getElementById('successMessage');
@@ -1046,46 +746,31 @@
             const form = this;
             
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
+            submitBtn.textContent = 'Sending...';
             errorMsg.classList.remove('show');
             successMsg.classList.remove('show');
             
-            const formData = new FormData(form);
-            
-            const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdKgitiG8r5i2aG2UvruxhJW1DZo-pfba5qkXPK3UUXPsjhGQ/formResponse';
-            
-            const googleFormData = new FormData();
-            googleFormData.append('entry.1171073377', formData.get('name'));
-            googleFormData.append('entry.175247169', formData.get('email'));
-            googleFormData.append('entry.559907591', formData.get('phone'));
-            googleFormData.append('entry.159712868', formData.get('plotType'));
-            
-            const messageValue = formData.get('message');
-            if (messageValue && messageValue.trim() !== '') {
-                googleFormData.append('entry.2137434508', messageValue);
-            }
-            
-            fetch(googleFormURL, {
-                method: 'POST',
-                body: googleFormData,
-                mode: 'no-cors'
-            }).then(() => {
-                successMsg.classList.add('show');
-                form.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Inquiry';
-                
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                setTimeout(() => {
-                    successMsg.classList.remove('show');
-                }, 10000);
-            }).catch((error) => {
-                errorMsg.textContent = 'Something went wrong. Please try again or contact us directly.';
-                errorMsg.classList.add('show');
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Inquiry';
-            });
+            // REPLACE THESE WITH YOUR EMAILJS IDS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    successMsg.classList.add('show');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Inquiry';
+                    
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    setTimeout(function() {
+                        successMsg.classList.remove('show');
+                    }, 10000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    errorMsg.textContent = 'Something went wrong. Please try again or contact us directly at +91 7900061753';
+                    errorMsg.classList.add('show');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Inquiry';
+                });
         });
     </script>
 </body>
